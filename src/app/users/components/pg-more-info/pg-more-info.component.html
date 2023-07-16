@@ -1,0 +1,105 @@
+<app-header></app-header>
+<div class="div mx-4"  >
+    <div id="default-carousel" class="relative w-full -z-20" data-carousel="slide">
+        <!-- Carousel wrapper -->
+        <div class="relative h-44 overflow-hidden rounded-lg md:h-96 ">
+             <!-- Item 1 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="{{pginfo?.pgImage}}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+            <!-- Item 2 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="assets/images/pgRoom.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+            <!-- Item 3 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="assets/images/pgWashroom.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+            <!-- Item 4 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="assets/images/pgroom2.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+          
+        </div>
+        <!-- Slider indicators -->
+        <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+        </div>
+        <!-- Slider controls -->
+        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                <span class="sr-only">Previous</span>
+            </span>
+        </button>
+        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                <span class="sr-only">Next</span>
+            </span>
+        </button>
+    </div>
+    <!-- pg details -->
+    <div class=" mt-2">
+        <div class="flex justify-between">
+            <h1 class="text-3xl font-semibold">{{ pginfo?.pgName }}</h1>
+            <button class="bg-blue-100 rounded-lg  w-20 flex flex-col items-center"><svg width="24" height="24" viewBox="0 0 26 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6 36C12.6 36 0 19.566 0 12.6C-2.46563e-08 10.9453 0.325909 9.30689 0.959118 7.77819C1.59233 6.24949 2.52044 4.86047 3.69045 3.69045C4.86047 2.52044 6.24949 1.59233 7.77819 0.959118C9.30689 0.325909 10.9453 0 12.6 0C14.2547 0 15.8931 0.325909 17.4218 0.959118C18.9505 1.59233 20.3395 2.52044 21.5095 3.69045C22.6796 4.86047 23.6077 6.24949 24.2409 7.77819C24.8741 9.30689 25.2 10.9453 25.2 12.6C25.2 19.566 12.6 36 12.6 36ZM12.6 16.2C13.5548 16.2 14.4705 15.8207 15.1456 15.1456C15.8207 14.4705 16.2 13.5548 16.2 12.6C16.2 11.6452 15.8207 10.7295 15.1456 10.0544C14.4705 9.37928 13.5548 9 12.6 9C11.6452 9 10.7295 9.37928 10.0544 10.0544C9.37929 10.7295 9 11.6452 9 12.6C9 13.5548 9.37929 14.4705 10.0544 15.1456C10.7295 15.8207 11.6452 16.2 12.6 16.2Z" fill="#FF0000"/>
+                </svg>
+                <p class="text-xs">Live location</p>
+                </button>
+        </div>
+        <h1 class="font-semibold">{{ pginfo?.address }}</h1>
+        <h1 class="font-semibold">Owner Name: {{ pginfo?.ownerName }}</h1>
+        <h1 class="font-semibold">Contact No.: {{ pginfo?.contactNo }}</h1>
+        <span class="fa fa-star checked text-green-500"></span>
+        <span class="fa fa-star checked text-green-500"></span>
+        <span class="fa fa-star checked text-green-500"></span>
+        <span class="fa fa-star text-green-500"></span>
+        <span class="fa fa-star text-green-500"></span>
+       
+    </div>
+
+    <div class=" mt-3">
+        <h1 class="font-semibold text-xl">Room Type</h1>
+        <ul class="w-full  text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white mt-2" >
+            <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                <div class="flex items-center pl-3">
+                    <input id="list-radio-license" type="radio" value="" name="list-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                    <label for="list-radio-license" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300 flex  justify-between">1- Sharing <span class="text-sm font-bold text-green-400 mr-4">₹16,000/month</span> </label>
+                </div>
+            </li>
+            <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                <div class="flex items-center pl-3">
+                    <input id="list-radio-license" type="radio" value="" name="list-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                    <label for="list-radio-license" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300 flex  justify-between">2- Sharing <span class="text-sm font-bold text-green-400 mr-4">₹12,000/month</span> </label>
+                </div>
+            </li>
+            <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                <div class="flex items-center pl-3">
+                    <input id="list-radio-license" type="radio" value="" name="list-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                    <label for="list-radio-license" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300 flex  justify-between">3- Sharing <span class="text-sm font-bold text-green-400 mr-4">₹8,000/month</span> </label>
+                </div>
+            </li>
+            <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                <div class="flex items-center pl-3">
+                    <input id="list-radio-license" type="radio" value="" name="list-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                    <label for="list-radio-license" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300 flex  justify-between">4- Sharing <span class="text-sm font-bold text-green-400 mr-4">₹5,500/month</span> </label>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="flex justify-center mt-3">
+        <button class="bg-green-300 px-6 py-2 rounded-lg font-semibold" routerLink="/payment">Pay now</button>
+    </div>
+    
+    
+</div>
+
+<app-bottom-navbar></app-bottom-navbar>

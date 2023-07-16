@@ -1,0 +1,249 @@
+<div class="m-4">
+  <div class="upper-part flex items-center justify-between">
+    <div class="left flex items-center">
+      <img src="assets/images/logo.png" class="w-24 h-24" alt="" />
+      <p class="text-2xl italic">apnaPG</p>
+    </div>
+
+    <!-- Modal toggle -->
+    <button
+      data-modal-target="authentication-modal"
+      data-modal-toggle="authentication-modal"
+      class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+      type="button"
+    >
+      Add PG
+    </button>
+  </div>
+  <hr class="bg-slate-400" />
+
+
+
+  <div class="lower-part mt-5 bg-slate-100 flex space-x-2 rounded-lg " *ngFor="let item of pgdetails ">
+    <img src="{{item.pgImage}}" alt="" class="w-2/5 rounded-lg">
+   <div class="p-info ">
+    <div class="flex items-center justify-between">
+      <p class="font-semibold text-2xl">{{item.pgName}}</p>
+      <div class="" (click)="deleteSellers(item.id)">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5.83331 17.5C5.37498 17.5 4.98248 17.3367 4.65581 17.01C4.32915 16.6833 4.16609 16.2911 4.16665 15.8333V5H3.33331V3.33333H7.49998V2.5H12.5V3.33333H16.6666V5H15.8333V15.8333C15.8333 16.2917 15.67 16.6842 15.3433 17.0108C15.0166 17.3375 14.6244 17.5006 14.1666 17.5H5.83331ZM14.1666 5H5.83331V15.8333H14.1666V5ZM7.49998 14.1667H9.16665V6.66667H7.49998V14.1667ZM10.8333 14.1667H12.5V6.66667H10.8333V14.1667Z" fill="#FF0000"/>
+        </svg>
+        
+      </div>
+    </div>
+    <p class="font-medium">{{item.address}}</p>
+    <p class="font-medium">{{item.ownerName}}</p>
+    <p class="font-medium">{{item.contactNo}}</p>
+    <select class="rounded-lg my-2 ">
+      <option [defaultSelected]="">Room Sharing </option>
+      <option > 1 sharing  <p class="font-medium text-green-400">-----₹{{item.sharingprice1}}</p></option>
+      <option > 2 sharing  <p class="font-medium text-green-400">-----₹{{item.sharingprice2}}</p></option>
+      <option > 3 sharing  <p class="font-medium text-green-400">-----₹{{item.sharingprice3}}</p></option>
+      <option > 4 sharing  <p class="font-medium text-green-400">-----₹{{item.sharingprice4}}</p></option>
+    </select>
+   
+    <div class="flex -space-x-2 overflow-hidden">
+  <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white" src="{{item.pgRoom1Image}}" alt="">
+  <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white" src="{{item.pgRoom2Image}}" alt="">
+  <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white" src="{{item.pgWashroomImage}}" alt="">
+ 
+</div>
+
+   </div>
+
+  </div>
+
+
+  <!-- Main modal -->
+  <div
+    id="authentication-modal"
+    tabindex="-1"
+    aria-hidden="true"
+    class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full"
+  >
+    <div class="relative w-full max-w-md max-h-full">
+      <!-- Modal content -->
+      <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+        <button
+          type="button"
+          class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+          data-modal-hide="authentication-modal"
+        >
+          <svg
+            class="w-3 h-3"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 14 14"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+            />
+          </svg>
+          <span class="sr-only">Close modal</span>
+        </button>
+        <div class="px-6 py-6 lg:px-8">
+          <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">
+            Add your PG Details
+          </h3>
+          <form class="space-y-6" action="#" #addpgform="ngForm" (ngSubmit)="postsSeller(addpgform.value)">
+            <div>
+              <label
+                for="email"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >PG Name</label
+              >
+              <input
+                type="text"
+                name="pgName"
+                id="email"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                placeholder="enter your PG name" ngModel
+                required
+              />
+            </div>
+            <div>
+              <label
+                for="email"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Address</label
+              >
+              <input
+                type="text"
+                name="address"
+                
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                placeholder="enter pg address" ngModel
+                required
+              />
+            </div>
+            <div>
+              <label
+                for="email"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >PG Owner Name
+              </label>
+              <input
+                type="text"
+                name="ownerName"
+                
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                placeholder="enter your pg owner name" ngModel
+                required
+              />
+            </div>
+            <div>
+              <label
+                for="email"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Contact No</label
+              >
+              <input
+                type="number"
+                name="contactNo"
+                
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                placeholder="enter your contact no" ngModel
+                required
+              />
+            </div>
+            <div class="space-y-2">
+              <label
+                for="email"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Room Sharing Price</label
+              >
+              <input
+                type="text"
+                name="sharingprice1"
+               
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                placeholder="enter 1-sharing price" ngModel
+                required
+              />
+              <input
+              type="text"
+              name="sharingprice2"
+             
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+              placeholder="enter 2-sharing price" ngModel
+              required
+            />
+            <input
+            type="text"
+            name="sharingprice3"
+           
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+            placeholder="enter 3-sharing price" ngModel
+            required
+          />
+          <input
+          type="text"
+          name="sharingprice4"
+         
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+          placeholder="enter 4-sharing price" ngModel
+          required
+        />
+            </div>
+            <div class="space-y-2">
+              <label
+                for="email"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >PG image</label
+              >
+              <input
+                type="text"
+                name="pgImage"
+               
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                placeholder="enter your PG imge url" ngModel
+                required
+              />
+              <input
+              type="text"
+              name="pgRoom1Image"
+             
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+              placeholder="enter your PG imge url" ngModel
+              required
+            />
+            <input
+            type="text"
+            name="pgRoom2Image"
+           
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+            placeholder="enter your PG imge url" ngModel
+            required
+          />
+          <input
+          type="text"
+          name="pgWashroomImage"
+         
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+          placeholder="enter your PG imge url" ngModel
+          required
+        />
+            </div>
+
+            <button
+              type="submit"
+              class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              
+            >
+              Add
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+<app-bottom-navbar></app-bottom-navbar>

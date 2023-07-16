@@ -1,0 +1,20 @@
+<app-header></app-header>
+<div class="mx-2">
+  <h1 class="mt-2 font-bold  text-2xl">Luxury Pg</h1>
+  <div class="cards flex flex-wrap w-full   ">
+    <div class="card  w-44  m-1 rounded-lg shadow-gray-400 shadow-md"[routerLink]="'/pg-more-info/' + item.id" *ngFor="let item of pginfo ">
+      <img src="{{item.pgImage}}" alt="" class="w-full h-44 rounded-lg" />
+      <h1 class="text-lg font-bold">{{item.pgName}}</h1>
+      <h1 class="text-sm font-semibold">{{item.address}}</h1>
+      <span class="fa fa-star checked text-green-500"></span>
+      <span class="fa fa-star checked text-green-500"></span>
+      <span class="fa fa-star checked text-green-500"></span>
+      <span class="fa fa-star text-green-500"></span>
+      <span class="fa fa-star text-green-500"></span>
+    </div>
+ <!-- card ends here-->
+  </div>
+</div>
+
+<!-- bottom navabar -->
+<app-bottom-navbar></app-bottom-navbar>

@@ -1,0 +1,110 @@
+
+<app-header></app-header>
+<div class="div mx-4">
+    <div id="default-carousel" class="relative w-full -z-20" data-carousel="slide">
+        <!-- Carousel wrapper -->
+        <div class="relative h-44 overflow-hidden rounded-lg md:h-96 ">
+             <!-- Item 1 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="assets/images/pg1.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+            <!-- Item 2 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="assets/images/pgRoom.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+            <!-- Item 3 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="assets/images/pgWashroom.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+            <!-- Item 4 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="assets/images/pgroom2.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+          
+        </div>
+        <!-- Slider indicators -->
+        <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+        </div>
+        <!-- Slider controls -->
+        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                <span class="sr-only">Previous</span>
+            </span>
+        </button>
+        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                <span class="sr-only">Next</span>
+            </span>
+        </button>
+    </div>
+    
+    
+    <!--luxury Card -->
+    <div class="luxury-card ">
+        <div class="flex justify-between mt-2 ">
+            <h2 class=" font-bold text-2xl">Luxury PG</h2>
+            <p class=" font-bold text-blue-500" ><a routerLink="/pg-info">view all</a></p>
+        </div>
+        <div class="luxury-cards flex  py-2 space-x-4 overflow-x-auto  rounded-lg shadow-gray-400 shadow-md" >
+            <img src="{{item.pgImage}}" alt="" class=" h-20 w-24 rounded-lg shadow-black shadow-md
+            " *ngFor="let item of pginfo ">
+        </div>
+    </div>
+    
+    <!-- Co-living card -->
+    <div class="co-living-card">
+        <div class="flex justify-between mt-2 ">
+            <h2 class=" font-bold text-2xl">Co-living PG</h2>
+            <p class=" font-bold text-blue-500">view all </p>
+        </div>
+        <div class="co-living-card flex p-4 space-x-4 overflow-x-scroll rounded-lg shadow-gray-400 shadow-md">
+            <img src="assets/images/luxury1.jpg" alt="" class=" h-36 w-24 rounded-lg shadow-black shadow-md">
+            <img src="assets/images/luxury1.jpg" alt="" class=" h-36 w-24 rounded-lg shadow-black shadow-md">
+            <img src="assets/images/luxury1.jpg" alt="" class=" h-36 w-24 rounded-lg shadow-black shadow-md">
+            <img src="assets/images/luxury1.jpg" alt="" class=" h-36 w-24 rounded-lg shadow-black shadow-md">
+            <img src="assets/images/luxury1.jpg" alt="" class=" h-36 w-24 rounded-lg shadow-black shadow-md">
+        </div>
+        
+    </div>
+    <!-- Normal pg card -->
+    <div class="normalPg-card">
+        <div class="flex justify-between mt-2 ">
+            <h2 class=" font-bold text-2xl">Normal PG</h2>
+            <p class=" font-bold text-blue-500">view all </p>
+        </div>
+        <div class="normalPg-card flex p-4 space-x-4 overflow-x-scroll rounded-lg shadow-gray-400 shadow-md">
+            <img src="assets/images/pg1.jpg" alt="" class=" h-36 w-24 rounded-lg ">
+            <img src="assets/images/pg1.jpg" alt="" class=" h-36 w-24 rounded-lg ">
+            <img src="assets/images/pg1.jpg" alt="" class=" h-36 w-24 rounded-lg ">
+            <img src="assets/images/pg1.jpg" alt="" class=" h-36 w-24 rounded-lg ">
+            <img src="assets/images/pg1.jpg" alt="" class=" h-36 w-24 rounded-lg ">
+        </div>
+        
+    </div>
+        <!-- Normal pg card -->
+        <div class="normalPg-card  ">
+            <div class="flex justify-between mt-2  ">
+                <h2 class=" font-bold text-2xl">Co-living PG</h2>
+                <p class=" font-bold text-blue-500">view all </p>
+            </div>
+            <div class="normalPg-card flex p-4 space-x-4 overflow-x-scroll">
+                <img src="assets/images/pg1.jpg" alt="" class=" h-36 w-24 rounded-lg">
+                <img src="assets/images/pg1.jpg" alt="" class=" h-36 w-24 rounded-lg">
+                <img src="assets/images/pg1.jpg" alt="" class=" h-36 w-24 rounded-lg">
+                <img src="assets/images/pg1.jpg" alt="" class=" h-36 w-24 rounded-lg">
+                <img src="assets/images/pg1.jpg" alt="" class=" h-36 w-24 rounded-lg">
+            </div>
+            
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur voluptates libero illo iure itaque officia. Numquam excepturi temporibus sit minima. Iste veniam nulla optio debitis ut vel praesentium suscipit sit explicabo facere. Iure quas reiciendis ex voluptates quasi amet porro esse. Earum numquam nobis consectetur quo harum facilis cum, necessitatibus suscipit architecto saepe reprehenderit quod ratione temporibus reiciendis voluptates iure optio rerum qui soluta. Soluta, quae omnis iusto neque error et assumenda sit! Nam, reprehenderit quod porro accusamus, iste itaque voluptatum commodi delectus vel neque error ad fugit tenetur expedita. Ad, unde harum dignissimos dicta alias tempora recusandae reiciendis! Et quis iste, vel doloribus dolor sunt autem reiciendis dolores rem id distinctio harum illo laudantium nulla hic adipisci, delectus corporis nobis. Eaque explicabo numquam, ducimus maiores reprehenderit possimus quia nulla neque, incidunt placeat provident eius cupiditate a quisquam suscipit harum dolor non doloribus, eum beatae inventore excepturi soluta repellendus voluptatibus? Deserunt, veritatis iusto! Soluta ducimus, quas facilis sapiente repudiandae debitis ipsum consequatur sit minus dolorem beatae, sed explicabo repellendus autem eius culpa ex commodi veniam cumque distinctio quia eum a ullam. Alias itaque, id iure asperiores ratione, vitae nulla tempore mollitia eligendi impedit exercitationem doloribus dolorum minus veniam, nobis illo eaque voluptatibus amet autem vel error? Nam saepe labore a obcaecati, quia tempore ut, sit possimus voluptatum ea voluptatem sequi numquam assumenda fuga asperiores excepturi laboriosam eligendi? Amet, omnis atque culpa sit mollitia voluptatibus dolore magnam qui ea minima nobis iure illo accusantium, excepturi modi quod repudiandae quaerat fuga, sed sunt neque? Doloremque deserunt exercitationem animi similique corrupti, libero distinctio maiores adipisci cupiditate accusamus magni aut facere voluptatem ducimus quis consequuntur neque repellendus odit fugit, ipsum quisquam nisi. Dignissimos facilis adipisci delectus aliquid animi. Recusandae reprehenderit voluptas in voluptatem dolore minima architecto velit expedita unde similique cupiditate accusantium, consectetur optio consequuntur, fugit quae deleniti illum earum perferendis natus nesciunt ipsum iste repudiandae modi. Impedit dignissimos iure, quas distinctio quisquam sit dolor tenetur quidem expedita eos alias excepturi reprehenderit soluta consequuntur. Numquam quidem corporis consectetur soluta, officia iusto adipisci nemo? Repudiandae hic consequatur perspiciatis maiores exercitationem pariatur culpa quasi odit, animi molestiae voluptate. Dolores, dolorum. Rem eaque odio sed voluptate accusantium minus provident necessitatibus, quam vitae, ad maxime ab molestias, labore sapiente doloremque iure aliquid hic! Obcaecati maiores ut, fugiat aspernatur nobis at molestiae minus magnam excepturi asperiores, debitis distinctio quas? Perspiciatis dignissimos qui delectus itaque asperiores dolorem vitae, veniam neque, soluta rerum nobis sunt amet alias non praesentium eveniet cumque facere tempore quae sed aut ut cum placeat accusantium. Nostrum ab nemo cum. Aperiam quasi voluptates molestiae corrupti quis. Repellat minus laborum minima, beatae dolorum iste repellendus ad quod. Earum maxime quas, incidunt praesentium velit, rem itaque molestiae alias dolorem expedita, enim suscipit amet quasi atque! Maxime accusamus eius architecto. Culpa, sequi voluptatem tempora, fugit iste velit nesciunt molestias, perferendis quos dolorem voluptatum magnam illum! Odio voluptatibus laboriosam minus cupiditate temporibus, accusamus vitae debitis sint sunt enim dolorem nisi autem a recusandae, quasi nostrum molestias, error ea. Consequatur, facere corporis!</p>
+    
+</div>
+
+<app-bottom-navbar></app-bottom-navbar>
